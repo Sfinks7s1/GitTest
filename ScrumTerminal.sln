@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio 14
+# Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminal", "Terminal\Terminal.csproj", "{3BDF49F5-71BC-4E6B-A18D-EB772220029E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleSpeechToText", "GoogleSpeechToText\GoogleSpeechToText.csproj", "{B325979B-28F5-45BC-A3C7-48E0735120DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3BDF49F5-71BC-4E6B-A18D-EB772220029E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BDF49F5-71BC-4E6B-A18D-EB772220029E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BDF49F5-71BC-4E6B-A18D-EB772220029E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B325979B-28F5-45BC-A3C7-48E0735120DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B325979B-28F5-45BC-A3C7-48E0735120DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B325979B-28F5-45BC-A3C7-48E0735120DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B325979B-28F5-45BC-A3C7-48E0735120DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
