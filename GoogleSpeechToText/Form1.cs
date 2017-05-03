@@ -13,43 +13,42 @@
         WaveIn waveIn;
         WaveFileWriter writer;
         string outputFilename = "temp.wav";
-        bool ON = false;
+        bool ON;
         public Form1()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ON == false)
+            if (this.ON == false)
             {
-                waveIn = new WaveIn();
+                this.waveIn = new WaveIn { DeviceNumber = 0 };
                 //Дефолтное устройство для записи (если оно имеется)
-                waveIn.DeviceNumber = 0;
                 //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
-                waveIn.DataAvailable += waveIn_DataAvailable;
-                waveIn.RecordingStopped += new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                this.waveIn.DataAvailable += this.waveIn_DataAvailable;
+                this.waveIn.RecordingStopped += this.waveIn_RecordingStopped;
                 //Формат wav-файла - принимает параметры - частоту дискретизации и количество каналов(здесь mono)
-                waveIn.WaveFormat = new WaveFormat(16000, 1);
-                writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
-                label2.Text = "Идет запись...";
-                button1.Text = "Стоп";
-                waveIn.StartRecording();
-                ON = true;
+                this.waveIn.WaveFormat = new WaveFormat(16000, 1);
+                this.writer = new WaveFileWriter(this.outputFilename, this.waveIn.WaveFormat);
+                this.label2.Text = "Идет запись...";
+                this.button1.Text = "Стоп";
+                this.waveIn.StartRecording();
+                this.ON = true;
             }
             else
             {
-                waveIn.StopRecording();
-                label2.Text = "";
-                ON = false;
-                button1.Text = "Запись";
+                this.waveIn.StopRecording();
+                this.label2.Text = "";
+                this.ON = false;
+                this.button1.Text = "Запись";
                 //button2_Click(this, EventArgs.Empty);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            byte[] byteArray = File.ReadAllBytes(outputFilename);
+            byte[] byteArray = File.ReadAllBytes(this.outputFilename);
 
             WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=ru-RU&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
             request.Method = "POST";
@@ -65,7 +64,7 @@
 
                     if (result != null)
                     {
-                        label1.Text = result.result[0].alternative[result.result_index].transcript;
+                        this.label1.Text = result.result[0].alternative[result.result_index].transcript;
                     }
 
                     reader.Close();
@@ -81,7 +80,7 @@
 
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Result));
 
-            MemoryStream stream1 = new MemoryStream(ASCIIEncoding.UTF8.GetBytes(toParse));
+            MemoryStream stream1 = new MemoryStream(Encoding.UTF8.GetBytes(toParse));
 
             Result result = (Result)ser.ReadObject(stream1);
 
@@ -93,12 +92,12 @@
         {
             if (this.InvokeRequired)
             {
-                this.BeginInvoke(new EventHandler<WaveInEventArgs>(waveIn_DataAvailable), sender, e);
+                this.BeginInvoke(new EventHandler<WaveInEventArgs>(this.waveIn_DataAvailable), sender, e);
             }
             else
             {
                 //Записываем данные из буфера в файл
-                writer.Write(e.Buffer, 0, e.BytesRecorded);
+                this.writer.Write(e.Buffer, 0, e.BytesRecorded);
             }
         }
 
@@ -106,14 +105,14 @@
         {
             if (this.InvokeRequired)
             {
-                this.BeginInvoke(new EventHandler(waveIn_RecordingStopped), sender, e);
+                this.BeginInvoke(new EventHandler(this.waveIn_RecordingStopped), sender, e);
             }
             else
             {
-                waveIn.Dispose();
-                waveIn = null;
-                writer.Close();
-                writer = null;
+                this.waveIn.Dispose();
+                this.waveIn = null;
+                this.writer.Close();
+                this.writer = null;
             }
         }
     }
