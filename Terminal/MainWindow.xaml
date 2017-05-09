@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Terminal"
         xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="Terminal.MainWindow"
         mc:Ignorable="d"
-        Title="Scrum master" Height="768" Width="1024" Icon="iPhone-BK-icon.png" MinHeight="768" MinWidth="1024">
+        Title="Scrum master" Height="768" Width="1024" Icon="C:\_Projects\GitTest\Terminal\Icons\iPhone-BK-icon.png" MinHeight="768" MinWidth="1024">
     <Grid x:Name="grid" MinWidth="{Binding ActualWidth, ElementName=grid}" MinHeight="{Binding ActualHeight, ElementName=grid}">
         <Custom:Ribbon x:Name="ribbon" Height="138" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True">
             <Custom:Ribbon.Background>
@@ -17,16 +17,23 @@
             </Custom:Ribbon.Background>
             <Custom:RibbonTab Header="Recorder">
                 <Custom:RibbonGroup Header="Record" Margin="0" Width="225">
-                    <Custom:RibbonButton Name="StartRecord" Height="70" Width="70" Margin="0,0,-70,-70" LargeImageSource="C:\111.jpeg"/>
-                    <Custom:RibbonButton Name="StopRecord" Height="70" Width="70" Margin="71,0,-140,-70" LargeImageSource="C:\111.jpeg"/>
-                    <Custom:RibbonButton Name="Play" Height="70" Width="70" Margin="142,0,-140,-70" LargeImageSource="C:\111.jpeg"/>
+                    <Custom:RibbonButton Name="StartRecord" BorderBrush="DarkGray" Height="70" Width="70" Margin="0,0,-70,-70" LargeImageSource="C:\_Projects\GitTest\Terminal\Icons\Play.png"/>
+                    <Custom:RibbonButton Name="StopRecord"  BorderBrush="DarkGray" Height="70" Width="70" Margin="71,0,-140,-70" LargeImageSource="C:\_Projects\GitTest\Terminal\Icons\Stop.png"/>
+                    <Custom:RibbonButton Name="OpenFolder"  BorderBrush="DarkGray" Height="70" Width="70" Margin="142,0,-140,-70" LargeImageSource="C:\_Projects\GitTest\Terminal\Icons\OpenFolder.png"/>
                 </Custom:RibbonGroup>
                 <Custom:RibbonGroup Header="Response" Margin="0" Width="225">
+                    <Custom:RibbonButton Name="ResponseByGoogle" BorderBrush="DarkGray" Height="70" Width="70" Margin="0,0,-70,-70" />
+                    <Custom:RibbonButton Name="ResponseByYandex"  BorderBrush="DarkGray" Height="70" Width="70" Margin="71,0,-140,-70" />
+                    <Custom:RibbonButton Name="ResponseBySystemSpeech"  BorderBrush="DarkGray" Height="70" Width="70" Margin="142,0,-140,-70" />
                 </Custom:RibbonGroup>
                 <Custom:RibbonGroup Header="Properties" Margin="0" Width="225">
+                    <Custom:RibbonButton Name="Properties" BorderBrush="DarkGray" Height="70" Width="70" Margin="0,0,-70,-70" />
+                    <Custom:RibbonButton Name="Options"  BorderBrush="DarkGray" Height="70" Width="70" Margin="71,0,-140,-70" />
+                    <Custom:RibbonButton Name="Help"  BorderBrush="DarkGray" Height="70" Width="70" Margin="142,0,-140,-70" />
                 </Custom:RibbonGroup>
             </Custom:RibbonTab>
             <Custom:RibbonTab Header="Scrum log">
+                
             </Custom:RibbonTab>
             <Custom:RibbonTab Header="Mind map">
             </Custom:RibbonTab>

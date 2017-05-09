@@ -37,6 +37,7 @@
     <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -96,7 +97,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="iPhone-BK-icon.png" />
+    <Resource Include="Icons\iPhone-BK-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\OpenFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
