@@ -8,13 +8,13 @@
     using System.Text;
     using System.Windows.Forms;
 
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         WaveIn waveIn;
         WaveFileWriter writer;
         string outputFilename = "temp.wav";
         bool ON;
-        public Form1()
+        public MainForm()
         {
             this.InitializeComponent();
         }
@@ -32,7 +32,7 @@
                 this.waveIn.WaveFormat = new WaveFormat(16000, 1);
                 this.writer = new WaveFileWriter(this.outputFilename, this.waveIn.WaveFormat);
                 this.label2.Text = "Идет запись...";
-                this.button1.Text = "Стоп";
+                this.btnRecord.Text = "Стоп";
                 this.waveIn.StartRecording();
                 this.ON = true;
             }
@@ -41,7 +41,7 @@
                 this.waveIn.StopRecording();
                 this.label2.Text = "";
                 this.ON = false;
-                this.button1.Text = "Запись";
+                this.btnRecord.Text = "Запись";
                 //button2_Click(this, EventArgs.Empty);
             }
         }
