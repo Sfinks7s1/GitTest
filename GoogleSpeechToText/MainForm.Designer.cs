@@ -37,9 +37,11 @@
             this.tabScrumLog = new System.Windows.Forms.TabPage();
             this.tabMindMap = new System.Windows.Forms.TabPage();
             this.tabGant = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabOptions = new System.Windows.Forms.TabPage();
             this.tcMainTabs.SuspendLayout();
             this.tabResponse.SuspendLayout();
+            this.tabScrumLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRecord
@@ -54,22 +56,21 @@
             this.btnRecord.Text = "Record";
             this.btnRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecord.UseVisualStyleBackColor = true;
-            this.btnRecord.Click += new System.EventHandler(this.button1_Click);
+            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 81);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(6, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(999, 475);
             this.label1.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 17);
+            this.label2.Location = new System.Drawing.Point(148, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(275, 35);
             this.label2.TabIndex = 2;
             // 
             // btnResponse
@@ -78,9 +79,9 @@
             this.btnResponse.Name = "btnResponse";
             this.btnResponse.Size = new System.Drawing.Size(136, 66);
             this.btnResponse.TabIndex = 3;
-            this.btnResponse.Text = "Распознать";
+            this.btnResponse.Text = "Response";
             this.btnResponse.UseVisualStyleBackColor = true;
-            this.btnResponse.Click += new System.EventHandler(this.button2_Click);
+            this.btnResponse.Click += new System.EventHandler(this.btnResponse_Click);
             // 
             // tcMainTabs
             // 
@@ -96,18 +97,20 @@
             this.tcMainTabs.Location = new System.Drawing.Point(1, -1);
             this.tcMainTabs.Name = "tcMainTabs";
             this.tcMainTabs.SelectedIndex = 0;
-            this.tcMainTabs.Size = new System.Drawing.Size(1024, 719);
+            this.tcMainTabs.Size = new System.Drawing.Size(884, 550);
             this.tcMainTabs.TabIndex = 4;
             // 
             // tabResponse
             // 
             this.tabResponse.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabResponse.Controls.Add(this.btnRecord);
+            this.tabResponse.Controls.Add(this.label2);
             this.tabResponse.Controls.Add(this.btnResponse);
+            this.tabResponse.Controls.Add(this.label1);
             this.tabResponse.Location = new System.Drawing.Point(4, 31);
             this.tabResponse.Name = "tabResponse";
             this.tabResponse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabResponse.Size = new System.Drawing.Size(1016, 684);
+            this.tabResponse.Size = new System.Drawing.Size(876, 515);
             this.tabResponse.TabIndex = 0;
             this.tabResponse.Text = "Response";
             this.tabResponse.UseVisualStyleBackColor = true;
@@ -115,10 +118,11 @@
             // tabScrumLog
             // 
             this.tabScrumLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabScrumLog.Controls.Add(this.textBox1);
             this.tabScrumLog.Location = new System.Drawing.Point(4, 31);
             this.tabScrumLog.Name = "tabScrumLog";
             this.tabScrumLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScrumLog.Size = new System.Drawing.Size(1016, 341);
+            this.tabScrumLog.Size = new System.Drawing.Size(876, 483);
             this.tabScrumLog.TabIndex = 1;
             this.tabScrumLog.Text = "Scrum log";
             this.tabScrumLog.UseVisualStyleBackColor = true;
@@ -129,7 +133,7 @@
             this.tabMindMap.Location = new System.Drawing.Point(4, 31);
             this.tabMindMap.Name = "tabMindMap";
             this.tabMindMap.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMindMap.Size = new System.Drawing.Size(1016, 341);
+            this.tabMindMap.Size = new System.Drawing.Size(876, 483);
             this.tabMindMap.TabIndex = 2;
             this.tabMindMap.Text = "Mind map";
             this.tabMindMap.UseVisualStyleBackColor = true;
@@ -139,17 +143,26 @@
             this.tabGant.Location = new System.Drawing.Point(4, 31);
             this.tabGant.Name = "tabGant";
             this.tabGant.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGant.Size = new System.Drawing.Size(1016, 341);
+            this.tabGant.Size = new System.Drawing.Size(876, 483);
             this.tabGant.TabIndex = 3;
             this.tabGant.Text = "TabGant";
             this.tabGant.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 58);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(999, 581);
+            this.textBox1.TabIndex = 0;
             // 
             // tabOptions
             // 
             this.tabOptions.Location = new System.Drawing.Point(4, 31);
             this.tabOptions.Name = "tabOptions";
             this.tabOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOptions.Size = new System.Drawing.Size(1016, 684);
+            this.tabOptions.Size = new System.Drawing.Size(876, 483);
             this.tabOptions.TabIndex = 4;
             this.tabOptions.Text = "Options";
             this.tabOptions.UseVisualStyleBackColor = true;
@@ -158,17 +171,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.tcMainTabs);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Scrum Master";
             this.tcMainTabs.ResumeLayout(false);
             this.tabResponse.ResumeLayout(false);
+            this.tabScrumLog.ResumeLayout(false);
+            this.tabScrumLog.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -183,6 +195,7 @@
         private System.Windows.Forms.TabPage tabScrumLog;
         private System.Windows.Forms.TabPage tabMindMap;
         private System.Windows.Forms.TabPage tabGant;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabOptions;
     }
 }

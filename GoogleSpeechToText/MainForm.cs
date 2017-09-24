@@ -19,7 +19,7 @@
             this.InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRecord_Click(object sender, EventArgs e)
         {
             if (this.ON == false)
             {
@@ -42,11 +42,10 @@
                 this.label2.Text = "";
                 this.ON = false;
                 this.btnRecord.Text = "Запись";
-                //button2_Click(this, EventArgs.Empty);
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnResponse_Click(object sender, EventArgs e)
         {
             byte[] byteArray = File.ReadAllBytes(this.outputFilename);
 
